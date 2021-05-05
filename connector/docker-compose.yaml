@@ -1,0 +1,14 @@
+version: "3.0"
+services:        
+ kafka_connect:
+    image: debezium/connect:1.4
+    ports:
+     - 8083:8083
+    environment:
+     - BOOTSTRAP_SERVERS=127.0.0.1:9092       
+     - GROUP_ID=1
+     - CONFIG_STORAGE_TOPIC=my_connect_configs
+     - OFFSET_STORAGE_TOPIC=my_connect_offsets
+     - STATUS_STORAGE_TOPIC=my_connect_statuses
+    network_mode: host
+       

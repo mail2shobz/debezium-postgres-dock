@@ -1,0 +1,10 @@
+version: "3.0"
+services:
+       kafka-watcher:
+         image: debezium/kafka:1.4
+         command: watch-topic -a -k dbserver1.public.company
+         environment:                   
+          - ADVERTISED_LISTENERS=PLAINTEXT://0.0.0.0:9092
+          - LISTENERS=PLAINTEXT://0.0.0.0:9092
+
+         network_mode: host       
