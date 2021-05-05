@@ -17,7 +17,7 @@ Steps to start
 
 CURL Command to register the DB in Debezium connector
 
-url -X POST -H "Accept:application/json" -H "Content-Type:application/json" localhost:8083/connectors/ -d '
+curl -X POST -H "Accept:application/json" -H "Content-Type:application/json" localhost:8083/connectors/ -d '
 {
 "name": "inventory_db-connector",
 "config": {
